@@ -19,7 +19,25 @@ noremap <silent> <Leader>+ :exe "vertical resize " . (winwidth(0) * 3/2)<CR>
 noremap <silent> <Leader>- :exe "vertical resize " . (winwidth(0) * 2/3)<CR>
 noremap <leader>t :!mix test<CR>
 
-execute pathogen#infect()
+call plug#begin()
+Plug 'jlanzarotta/bufexplorer'
+Plug 'scrooloose/nerdtree'
+Plug 'junegunn/vim-github-dashboard'
+Plug 'fatih/vim-go'
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-easy-align'
+Plug 'tpope/vim-fugitive'
+Plug 'scrooloose/syntastic'
+Plug 'airblade/vim-gitgutter'
+Plug 'vim-airline/vim-airline'
+Plug 'prabirshrestha/async.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+
+call plug#end()
 
 "Use Vim settings, rather then Vi settings (much better!).
 "This must be first, because it changes other options as a side effect.
